@@ -19,7 +19,6 @@
 |name|string|null: false|
 |email|string|null: false, unique: true|
 |password|password|null: false|
-|group_id|integer|null: false|
 
 ### Association
 - has_many :members
@@ -31,7 +30,6 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|user_id|integer|null: false|
 
 ### Association
 - has_many :members
