@@ -1,0 +1,26 @@
+.side-bar
+  .header
+    %h3.header__name
+      = current_user.name
+    = link_to edit_user_path(current_user) do
+      %i.fa.fa-cog.icon.fa-fw
+    = link_to do
+      %i.fa.fa-edit.icon.fa-fw
+  .groups
+    .group
+      .group__name
+        test
+      .group__message
+        テスト4
+
+    .group
+      .group__name
+        test
+      .group__message
+        テスト4
+
+    .group
+      .group__name
+        test
+      .group__message
+        テスト4

@@ -1,31 +1,30 @@
-.alert-message
-  チャットグループが作成されました。
-.side-bar
-  .header
-    %h3.header__name
-      sampleユーザー
-    = link_to do
-      %i.fa.fa-cog.icon.fa-fw
-    = link_to do
-      %i.fa.fa-edit.icon.fa-fw
-  .groups
-    .group
-      .group__name
-        test
-      .group__message
-        テスト4
+/ .side-bar
+/   .header
+/     %h3.header__name
+/       sampleユーザー
+/     = link_to edit_user_path(current_user) do
+/       %i.fa.fa-cog.icon.fa-fw
+/     = link_to do
+/       %i.fa.fa-edit.icon.fa-fw
+/   .groups
+/     .group
+/       .group__name
+/         test
+/       .group__message
+/         テスト4
 
-    .group
-      .group__name
-        test
-      .group__message
-        テスト4
+/     .group
+/       .group__name
+/         test
+/       .group__message
+/         テスト4
 
-    .group
-      .group__name
-        test
-      .group__message
-        テスト4
+/     .group
+/       .group__name
+/         test
+/       .group__message
+/         テスト4
+= render "shared/side_bar"
 
 .chat
   .header
@@ -37,7 +36,7 @@
         %li.member
           sampleユーザー
     .right-header
-      = link_to "Edit", "#", class:"right-header__button"
+      = link_to "Edit", "#", class: "right-header__button"
 
   .messages
     .message

@@ -1,9 +1,16 @@
 @import "./reset";
-@import "./side-bar";
-@import "./chat";
-@import "./alert-message";
 @import "font-awesome";
 
 
 
 
+@import "config/colors";
+// @import "config/size";                  //恐らく変数定義ファイル
+// @import "config/reset";                 //恐らく変数定義ファイル
+// @import "mixins/mixin";
+// @import "mixins/vendor_prefix";
+@import "modules/side_bar";               //格納済み
+@import "modules/chat";                   //格納済み
+@import "modules/user";                   //格納済み
+@import "modules/flash";
+// @import "messages/messages.scss"
