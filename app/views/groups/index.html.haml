@@ -1,0 +1,35 @@
+.wrapper
+  = render "shared/side_bar"
+
+  .chat
+    .header
+      .left-header
+        %h3.left-header__title
+          sampleグループ
+        %ul.left-header__members
+          Member :
+          %li.member
+            sampleユーザー
+      .right-header
+        .right-header__button
+        = link_to "Edit", "/groups/1/edit" , class: "right-header__button"
+
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            sampleユーザー
+          .upper-message__date
+            2018/12/25 12:00:00
+        .lower-message
+          .lower-message__content
+            sampleテキスト
+
+    = form_tag do
+      .form
+        %input{type: "text", name: "text", placeholder: "type a text", class: "text"}
+        .form__mask
+          %label
+            %input{type: "file", name: "file", class: "file"}
+            %i.fa.fa-image.icon
+        %input{type: "submit", value: "Send", class: "submit"}

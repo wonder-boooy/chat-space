@@ -4,23 +4,13 @@
       = current_user.name
     = link_to edit_user_path(current_user) do
       %i.fa.fa-cog.icon.fa-fw
-    = link_to do
+    = link_to new_group_path do
       %i.fa.fa-edit.icon.fa-fw
   .groups
     .group
-      .group__name
-        test
-      .group__message
-        テスト4
-
-    .group
-      .group__name
-        test
-      .group__message
-        テスト4
-
-    .group
-      .group__name
-        test
-      .group__message
-        テスト4
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group), {style: "text-decoration: none;"} do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
