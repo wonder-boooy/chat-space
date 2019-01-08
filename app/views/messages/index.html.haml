@@ -1,0 +1,29 @@
+.wrapper
+  = render "shared/side_bar"
+
+  .chat
+    .header
+      .left-header
+        %h3.left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member :
+          %li.member
+            - @group.users.each do |user|
+              = user.name
+      .right-header
+        .right-header__button
+        = link_to "Edit", "/groups/1/edit" , class: "right-header__button"
+
+    .messages
+      = render "message", collection: @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, placeholder: "type a message", class: "form__message"
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = f.file_field :image, class: "hidden"
+            %i.fa.fa-image.icon
+        = f.submit :Send, class: "form__submit"
+

@@ -7,10 +7,10 @@
     = link_to new_group_path do
       %i.fa.fa-edit.icon.fa-fw
   .groups
-    .group
-      - current_user.groups.each do |group|
+    - current_user.groups.each do |group|
+      .group
         = link_to group_messages_path(group), {style: "text-decoration: none;"} do
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
+            = group.show_last_message

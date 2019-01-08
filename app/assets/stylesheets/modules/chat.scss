@@ -75,7 +75,7 @@
     padding: 20px 40px;
     background-color: #DDDDDD;
     box-sizing: border-box;
-    .text {
+    .form__message {
       width: calc(100% - 170px);
       height: 50px;
       padding: 0 10px 0;
@@ -94,12 +94,12 @@
         .fa-image {
           font-size: 20px;
         }
-        .file {
+        .hidden {
           display: none;
         }
       }
     }
-    .submit {
+    .form__submit {
       height: 50px;
       line-height: 50px;
       margin-left: 15px;
