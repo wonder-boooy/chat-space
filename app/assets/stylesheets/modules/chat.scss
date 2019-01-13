@@ -60,11 +60,13 @@
         }
       }
       .lower-message {
+        clear: both;
         &__content {
           font-size: 14px;
           color: #434A54;
           padding-bottom: 40px;
-          clear: both;
+        }
+        &__image {
         }
       }
     }
