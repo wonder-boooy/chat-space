@@ -40,10 +40,9 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log("成功");
       var html = buildHTML(data);
       $(".messages").append(html);
-      $(".input-form").val("");
+      $("#sendBtn")[0].reset();
       $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 500);
     })
     .fail(function(){
