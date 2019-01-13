@@ -13,17 +13,16 @@
               = user.name
       .right-header
         .right-header__button
-        = link_to "Edit", "/groups/1/edit" , class: "right-header__button"
+        = link_to "Edit", edit_group_path(@group) , class: "right-header__button"
 
     .messages
-      = render "message", collection: @messages
+      = render @messages
 
     .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, placeholder: "type a message", class: "form__message"
+      = form_for [@group, @message], html: {id: "sendBtn"} do |f|
+        = f.text_field :content, placeholder: "type a message", class: "form__message input-form"
         .form__mask
           = f.label :image, class: 'form__mask__image' do
-            = f.file_field :image, class: "hidden"
+            = f.file_field :image, class: "hidden input-form"
             %i.fa.fa-image.icon
         = f.submit :Send, class: "form__submit"
-
