@@ -22,14 +22,7 @@
     .chat-group-form__field--left
       = f.label :チャットメンバー, class: "chat-group-form__label"
     - group.users.each do |group_user|
-      .chat-group-form__field--right
-        .chat-group-user.clearfix.js-chat-member
-          %input{name: 'group[user_ids][]', type: 'hidden', value: group_user.id}
-          %p{class: 'chat-group-user__name'}
-            = group_user.name
-          - if(group_user.id != current_user.id)
-            %a{class: 'user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'}
-              削除
+      = render partial: "group-user", locals: {group_user: group_user}
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
