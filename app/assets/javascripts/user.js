@@ -24,7 +24,6 @@ $(function(){
       </div>
     </div>`;
     $("#group-user").append(userList);
-    console.log($("#group-user"));
     return $("#group-user");
   };
   $("#user-search-field").keyup(function(){
@@ -57,7 +56,6 @@ $(function(){
     $("#user-search-field").val("");
   });
   $(document).on("click", ".js-remove-btn", function(){
-    console.log(this);
     $(this).parent().parent().remove();
   });
 });
