@@ -47,8 +47,6 @@ $(function(){
     .fail(function(){
       alert("ユーザー検索に失敗しました")
     })
-    .always(function(){
-    });
   });
   $(document).on("click", ".chat-group-user__btn--add", function(){
     addUser($(this).data('user-id'), $(this).data('user-name'));
