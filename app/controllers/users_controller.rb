@@ -12,9 +12,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.where('name LIKE(?)',"%#{params[:keyword]}%").filter_current_user(current_user)
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
   def permit_params
     params.require(:user).permit(:name, :email)
   end
+
 
 end
