@@ -53,16 +53,16 @@ $(function(){
       $.ajax({
         type: "get",
         url: location.href,
-        data: {keyword: id},
+        data: {id: id},
         dataType: "json"
       })
       .done(function(data){
         var insertHTML = '';
         data.forEach(function(message){
           insertHTML += buildHTML(message);
-          $(".messages").append(insertHTML);
           $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 500);
         });
+        $(".messages").append(insertHTML);
       })
       .fail(function(){
         alert("自動更新に失敗しました")
