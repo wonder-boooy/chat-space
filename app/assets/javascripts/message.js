@@ -45,24 +45,24 @@ $(function(){
       $(".form__submit").removeAttr("disabled");
     })
   });
+  setInterval(autoUpdate, 5000);
   // 自動更新処理
-  var interval = setInterval(function(){
+  function autoUpdate(){
     if(window.location.href.match(/\/groups\/\d*\/messages/)){
+      var id = $(".message").last().data("messageId");
       $.ajax({
+        type: "get",
         url: location.href,
+        data: {keyword: id},
         dataType: "json"
       })
       .done(function(data){
-        var id = $(".message").last().data("messageId");
-        var new_id = data[data.length-1].id
-        if (new_id > id){
-          var insertHTML = '';
-          data.forEach(function(message){
-            insertHTML += buildHTML(message);
-          });
-          $(".messages").html(insertHTML);
+        var insertHTML = '';
+        data.forEach(function(message){
+          insertHTML += buildHTML(message);
+          $(".messages").append(insertHTML);
           $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 500);
-        }
+        });
       })
       .fail(function(){
         alert("自動更新に失敗しました")
@@ -70,5 +70,5 @@ $(function(){
     } else {
       clearInterval(interval)
     }
-  }, 5000);
+  }
 })
